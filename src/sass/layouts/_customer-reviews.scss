@@ -1,0 +1,226 @@
+.reviews {
+  padding-bottom: 86px;
+  @include tab {
+    padding-bottom: 119px;
+  }
+  @include pc {
+    padding-bottom: 132px;
+  }
+}
+
+.reviews__container {
+  position: relative;
+}
+.radio-btn {
+  position: absolute;
+  appearance: none;
+  bottom: 0;
+}
+
+.reviews__slide-wrapper {
+  position: relative;
+}
+.reviews__slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: opacity 250ms linear;
+}
+
+.reviews__img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+
+  margin-bottom: 29px;
+}
+.reviews__img--1 {
+  background-image: url(../images/slider/emily@1x-min.png);
+}
+.reviews__img--2 {
+  background-image: url(../images/slider/cara@1x-min.png);
+}
+.reviews__img--3 {
+  background-image: url(../images/slider/lora@1x-min.png);
+}
+
+.reviews__text--wrapper {
+  width: 87.5vw;
+  max-height: 530px;
+  @include tel {
+    width: 420px;
+  }
+  @include tab {
+    width: 544px;
+  }
+  @include pc {
+    width: 822px;
+  }
+
+  padding: 50px 50px 20px 50px;
+  @include tab {
+    padding: 40px 40px 30px 30px;
+  }
+  @include pc {
+    padding: 35px 50px 30px 50px;
+  }
+
+  background-color: #fafafa;
+
+  margin-bottom: 52px;
+}
+.reviews__text {
+  position: relative;
+  z-index: 0;
+
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 2.5;
+  text-align: center;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  @include tab {
+    font-size: 14px;
+    line-height: 2.16;
+  }
+  @include pc {
+    font-size: 16px;
+    line-height: 1.86;
+  }
+
+  color: #000000;
+  background-image: repeating-linear-gradient(
+    #fafafa,
+    #fafafa 26px,
+    #e1e1e1 26px,
+    #e1e1e1 27px,
+    #fafafa 27px,
+    #fafafa 30px
+  );
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 54px;
+    height: 40px;
+
+    top: -16px;
+    left: -10px;
+    z-index: -1;
+
+    background-image: url(../images/quotes.svg);
+  }
+
+  &::after {
+    position: absolute;
+    content: '. . .';
+    bottom: -66px;
+    left: 50%;
+    transform: translateX(-38%);
+
+    color: #c7133e;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+  }
+}
+
+.reviews__description {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.86;
+  @include tab {
+    font-size: 16px;
+  }
+  @include pc {
+    font-size: 20px;
+  }
+
+  color: #000000;
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.reviews__slide-switchers {
+  display: flex;
+  justify-content: center;
+}
+.reviews__slide-switcher:not(:first-child) {
+  margin-left: 10px;
+}
+
+.reviews__container
+  [value='slide-1']:checked
+  ~ .reviews__slide-wrapper
+  .reviews__slide:not([data-category='slide-1']),
+.reviews__container
+  [value='slide-2']:checked
+  ~ .reviews__slide-wrapper
+  .reviews__slide:not([data-category='slide-2']),
+.reviews__container
+  [value='slide-3']:checked
+  ~ .reviews__slide-wrapper
+  .reviews__slide:not([data-category='slide-3']) {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.reviews__switcher-icon {
+  padding: 4px;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+.reviews__active-slide-icon {
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
+.reviews__slide-icon {
+  transition: opacity 250ms linear;
+}
+
+.reviews__container
+  [value='slide-1']:checked
+  ~ .reviews__slide-switchers
+  [for='slide-1']
+  .reviews__active-slide-icon,
+.reviews__container
+  [value='slide-2']:checked
+  ~ .reviews__slide-switchers
+  [for='slide-2']
+  .reviews__active-slide-icon,
+.reviews__container
+  [value='slide-3']:checked
+  ~ .reviews__slide-switchers
+  [for='slide-3']
+  .reviews__active-slide-icon {
+  opacity: 1;
+}
+
+.reviews__container
+  [value='slide-1']:checked
+  ~ .reviews__slide-switchers
+  [for='slide-1']
+  .reviews__slide-icon,
+.reviews__container
+  [value='slide-2']:checked
+  ~ .reviews__slide-switchers
+  [for='slide-2']
+  .reviews__slide-icon,
+.reviews__container
+  [value='slide-3']:checked
+  ~ .reviews__slide-switchers
+  [for='slide-3']
+  .reviews__slide-icon {
+  opacity: 0;
+}

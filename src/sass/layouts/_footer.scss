@@ -1,0 +1,161 @@
+.footer {
+  position: relative;
+  background-color: $cl-section;
+  padding-bottom: 25px;
+  padding-top: 113px;
+  @include tab {
+    padding-bottom: 18px;
+    padding-top: 158px;
+  }
+  @include pc {
+    padding-bottom: 10px;
+    padding-top: 165px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 98px;
+    width: 100%;
+    border-top: 1px solid $cl-footer-line;
+
+    @include tab {
+      height: 73px;
+    }
+    @include pc {
+      height: 45px;
+    }
+  }
+}
+
+.footer__flex {
+  display: block;
+
+  @include tab {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.footer-h {
+  width: 234px;
+
+  @include tab {
+    width: 345px;
+  }
+  @include pc {
+    width: initial;
+  }
+}
+.footer-h__h1 {
+  @include font-design(Titan One, normal, 400, 18px, 1.17);
+  text-transform: uppercase;
+  color: $cl-primary;
+
+  @include tab {
+    @include font-design(Titan One, normal, 400, 26px, 1.15);
+  }
+
+  @include pc {
+    @include font-design(Titan One, normal, 400, 30px, 1.13);
+  }
+}
+.footer-h__h2 {
+  @include font-design(Titan One, normal, 400, 34px, 1.15);
+  text-transform: uppercase;
+  color: $cl-accent;
+  margin-top: 17px;
+
+  @include tab {
+    @include font-design(Titan One, normal, 400, 48px, 1.15, 0.06em);
+    margin-top: 16px;
+  }
+
+  @include pc {
+    @include font-design(Titan One, normal, 400, 58px, 1.14, 00.06em);
+  }
+}
+.contakts {
+  text-align: right;
+}
+.social-media {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 43px;
+  margin-bottom: 46px;
+
+  & > :not(:last-child) {
+    margin-right: 28px;
+  }
+
+  @include tab {
+    margin-top: 0;
+
+    & > :not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+  @include pc {
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    & > :not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+}
+.link__social-media {
+  color: $cl-primary;
+  transition: color 250ms linear;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $cl-accent;
+    border-radius: 50%;
+    outline-color: $cl-accent;
+  }
+  .icon-social {
+    display: block;
+    fill: currentColor;
+  }
+  @include tab {
+    width: 34px;
+    height: 34px;
+  }
+}
+.tel,
+.tel-number {
+  @include font-design(DM Sans, normal, 700, 12px, 1.86, 0);
+  @include tab {
+    @include font-design(DM Sans, normal, 700, 14px, 1.86, 0);
+  }
+  @include pc {
+    @include font-design(DM Sans, normal, 700, 16px, 1.86, 00.02em);
+  }
+}
+.tel-number {
+  color: $cl-accent;
+  &:focus {
+    outline-color: $cl-accent;
+  }
+}
+.copyright {
+  @include font-design(DM Sans, normal, 700, 14px, 1.52, 0);
+  text-align: center;
+  color: $cl-text;
+  width: 150px;
+  margin-top: 65px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include tab {
+    @include font-design(DM Sans, normal, 700, 14px, 1.86, 0.02em);
+    width: initial;
+    margin-top: 120px;
+  }
+
+  @include pc {
+    margin-top: 106px;
+  }
+}

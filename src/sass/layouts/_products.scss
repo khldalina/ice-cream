@@ -1,0 +1,268 @@
+// ----------------MAIN---------------------- //
+.container__products {
+  padding-top: 115px;
+  padding-bottom: 98px;
+
+  text-align: center;
+
+  @include tab {
+    padding-top: 122px;
+    padding-bottom: 112px;
+  }
+
+  @include pc {
+    padding-top: 127px;
+    padding-bottom: 120px;
+    padding-right: 113px;
+    padding-left: 113px;
+  }
+}
+
+// -------------Header Part----------------- //
+.products__main-header {
+  font-family: Titan One;
+  font-size: 34px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: $cl-accent;
+  margin-bottom: 144px;
+
+  @include tab {
+    margin-bottom: 150px;
+  }
+
+  @include pc {
+    font-size: 58px;
+    margin-bottom: 260px;
+  }
+  &-description {
+    margin-bottom: 15px;
+    font-family: Titan One;
+    font-size: 18px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: $cl-primary;
+
+    @include pc {
+      font-size: 30px;
+    }
+  }
+}
+
+// ------------------ Product Cards ------------------ //
+.products-block {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: -130px;
+
+  @include tab {
+    flex-direction: row;
+    margin-right: -20px;
+    margin-bottom: 0;
+  }
+}
+.products-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 485px;
+  width: 280px;
+
+  margin-bottom: 130px;
+  padding-top: 161px;
+  padding-bottom: 41px;
+  padding-right: 42px;
+  padding-left: 42px;
+  text-align: center;
+  color: $cl-white-primary;
+
+  border-radius: 24px;
+
+  @include tab {
+    padding-top: 150px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    margin-right: 20px;
+    margin-bottom: 0;
+
+    width: 220px;
+    height: 485px;
+  }
+  @include pc {
+    padding-top: 165px;
+    padding-bottom: 50px;
+    padding-left: 44px;
+    padding-right: 44px;
+
+    width: 330px;
+    height: 525px;
+  }
+
+  // -----------------Dote------------- //
+  &::after {
+    display: flex;
+    position: absolute;
+    content: '';
+    top: 220px;
+    left: 45%;
+    background-image: url(./../images/dotes@2x-min.png);
+    width: 26px;
+    height: 6px;
+
+    @include tab {
+      top: 205px;
+    }
+    @include pc {
+      top: 230px;
+    }
+    //  -------------------------------- //
+  }
+}
+// ------------ Decorative Pictures --------------- //
+.products-card--bg {
+  &-pink {
+    background-color: $cl-card1;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 250px;
+      height: 250px;
+      top: -113px;
+      left: 7%;
+      background-image: url(./../images/mobile/ice-cream@2x.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include tab {
+        width: 220px;
+        height: 238px;
+        left: 0%;
+      }
+
+      @include pc {
+        width: 335px;
+        height: 335px;
+        top: -210px;
+      }
+    }
+  }
+  &-bezh {
+    background-color: $cl-card2;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 250px;
+      height: 250px;
+      top: -113px;
+      left: 7%;
+      background-image: url(./../images/mobile/ice-coffe@2x.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include tab {
+        width: 220px;
+        height: 238px;
+        left: 0%;
+      }
+
+      @include pc {
+        width: 335px;
+        height: 335px;
+        top: -210px;
+      }
+    }
+  }
+
+  &-green {
+    background-color: $cl-card3;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 250px;
+      height: 250px;
+      top: -113px;
+      left: 7%;
+      background-image: url(./../images/mobile/milkshakes@2x.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include tab {
+        width: 220px;
+        height: 238px;
+        left: 0%;
+      }
+      @include pc {
+        width: 335px;
+        height: 335px;
+        top: -210px;
+      }
+    }
+  }
+}
+// ---------------------------------------------------------------- //
+
+//  -------------------- Inside Product Cards --------------------- //
+.products-card__header--text {
+  display: block;
+
+  margin-bottom: 66px;
+
+  font-family: Titan One;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+
+  @include pc {
+    font-size: 30px;
+    margin-bottom: 64px;
+  }
+}
+
+.products-card__description {
+  margin-bottom: 30px;
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.5;
+
+  @include tab {
+    margin-bottom: 40px;
+  }
+  @include pc {
+    font-size: 16px;
+    margin-bottom: 62px;
+  }
+}
+.products-card__btn {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  border-radius: 50%;
+  outline: none;
+
+  transition: border 250ms linear;
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    border: 2px solid #c7133e;
+  }
+
+  &--icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+// ---------------------------------------------------------------- //

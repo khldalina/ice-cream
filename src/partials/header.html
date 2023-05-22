@@ -1,0 +1,94 @@
+<!-- кнопка скрол вгору -->
+<div class="scrollTop"></div>
+<section>
+  <!-- блок мобільне меню -->
+  <div class="mob-menu is-hidden" data-mobMenu>
+    <!-- кнопка закриття меню -->
+    <button type="button" class="mob-menu__close" data-mobMenu-close>
+      <svg width="23" height="23" aria-label="закрити меню">
+        <use class="icon-cross" href="./images/sprite.svg#icon-close-black"></use>
+      </svg>
+    </button>
+    <!-- мобільна-кнопка купити зараз -->
+    <div class="mob-nav">
+      <button class="btn__buy-mob" type="button">
+        <span class="btn__buy-link"
+          >Buy now
+          <svg class="btn__buy-icon" width="4" height="8">
+            <use href="./images/sprite.svg#icon-button-arrow"></use>
+          </svg>
+        </span>
+      </button>
+      <!-- мобільне меню -->
+      <div>
+        <ul class="mob-nav__list list">
+          <li class="mob-nav__item">
+            <a class="link mob-nav__link" href="#home">Home</a>
+          </li>
+          <li class="mob-nav__item">
+            <a class="link mob-nav__link" href="#aboutUs">About us</a>
+          </li>
+          <li class="mob-nav__item">
+            <a class="link mob-nav__link" href="#howIt’sMade">How it’s made?</a>
+          </li>
+          <li class="mob-nav__item">
+            <a class="link mob-nav__link" href="#ourProducts">Our products</a>
+          </li>
+          <li class="mob-nav__item">
+            <a class="link mob-nav__link" href="#contac">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- шапка зайту -->
+  <div class="container header__section">
+    <!-- логотип -->
+    <a href="#" class="header__logo animate__animated animate__bounceIn">
+      <picture>
+        <source
+          srcset="./images/logo1logo@1x-min.png 1x, ./images/logo1logo@2x-min.png 2x"
+          media="(min-width: 320px)"
+        />
+        <img src="./images/logo1logo@1x-min.png" alt="site logo" />
+      </picture>
+    </a>
+    <!-- навігаційна-кнопка купити зараз -->
+    <button class="btn__buy" type="button">
+      <span class="btn__buy-link"
+        >Buy now
+        <svg class="btn__buy-icon" width="4" height="8">
+          <use href="./images/sprite.svg#icon-button-arrow"></use>
+        </svg>
+      </span>
+    </button>
+    <!-- кнопка відкривання мобільного меню -->
+    <button type="button" class="mob-menu__open" data-mobMenu-open>
+      <svg width="20" height="12" aria-label="відкрити меню">
+        <use class="icon-menu" href="./images/sprite.svg#icon-burger"></use>
+      </svg>
+    </button>
+  </div>
+  <!-- панель навігації  -->
+  <nav class="nav">
+    <div class="nav__bar">
+      <ul class="site-menu list">
+        <li class="nav__item">
+          <a class="nav__link current" href="#home">Home</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#aboutUs">About us</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#howIt’sMade">How it’s made?</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#ourProducts">Our products</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#contac">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</section>

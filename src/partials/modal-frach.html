@@ -1,0 +1,68 @@
+<div data-modal-fr class="backdrop-fr is-hidden">
+  <div class="modal-fr">
+    <button data-modal-close-fr type="button" class="buttonClose-fr">
+      <svg class="buttonClose__icon" width="14" height="14">
+        <use href="./images/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div role="group" class="modal-window-fr">
+      <p class="modal-window__title-fr">Leave your details, we will call you back</p>
+      <form class="modal-window__form-fr">
+        <div class="modal-window__fields-fr">
+          <label class="modal-window__labels-fr" for="user-name">Name</label>
+          <div class="modal-window__input-field-fr">
+            <input class="modal-window__input-fr" name="user-name" type="text" id="user-name" />
+            <svg class="modal-window__input-icon-fr" width="18" height="18">
+              <use href="./images/sprite.svg#icon-user"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="modal-window__fields-fr">
+          <label class="modal-window__labels-fr" for="tel">Phone</label>
+          <div class="modal-window__input-field-fr">
+            <input name="tel" id="tel" class="modal-window__input-fr" type="tel" />
+            <svg class="modal-window__input-icon-fr" width="18" height="18">
+              <use href="./images/sprite.svg#icon-tel"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="modal-window__fields-fr">
+          <label class="modal-window__labels-fr" for="mail">E-mail</label>
+          <div class="modal-window__input-field-fr">
+            <input name="mail" id="mail" class="modal-window__input-fr" type="email" />
+            <svg class="modal-window__input-icon-fr" width="18" height="18">
+              <use href="./images/sprite.svg#icon-mail"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="comment-field-fr">
+          <label class="comment-field__label-fr" for="comment">Comment</label>
+          <textarea
+            class="comment-field__textarea-fr"
+            name="comment"
+            id="comment-field__textarea"
+            rows="10"
+            placeholder="Leave your suggestion here"
+          ></textarea>
+        </div>
+        <div class="agree-options-fr">
+          <input
+            name="agree-checkbox"
+            id="agree-checkbox"
+            type="checkbox"
+            class="agree-options__checkbox-fr visually-hidden"
+          />
+          <label class="agree-options__text-fr" for="agree-checkbox"
+            >I agree with the newsletter and accept
+            <a class="agree-options__link-fr" href=""> Agreement conditions</a></label
+          >
+        </div>
+
+        <button class="submit-button-fr" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</div>

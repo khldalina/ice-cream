@@ -1,0 +1,216 @@
+.about__section {
+  padding-top: 125px;
+  background-color: $cl-section;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    padding-top: 130px;
+  }
+
+  @media screen and (max-width: 767px) {
+    background-image: url(../images/mobile/milk@1x.png);
+    background-repeat: no-repeat;
+    background-position: bottom 61px left;
+    background-size: 100%;
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/mobile/milk@2x.png);
+    }
+  }
+
+  @include pc {
+    background-image: url(../images/pc/about-milk@1x.png);
+    background-repeat: no-repeat;
+    background-position: bottom -65px left;
+    background-size: 100%;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/pc/about-milk@2x.png);
+    }
+  }
+}
+
+.about__container {
+  padding-left: 50px;
+  padding-right: 50px;
+
+  @include tab {
+    padding-left: 39px;
+    padding-right: 36px;
+  }
+
+  @include pc {
+    padding-left: 112px;
+    padding-right: 117px;
+  }
+}
+
+.about__pre-title {
+  margin-bottom: 15px;
+  @include font-design(Titan One, normal, 400, 18px, 1.17);
+
+  text-align: center;
+  text-transform: uppercase;
+  color: $cl-primary;
+
+  @include tab {
+    margin-bottom: 16px;
+    @include font-design(Titan One, normal, 400, 26px, 1.15);
+  }
+
+  @include pc {
+    margin-bottom: 15px;
+    @include font-design(Titan One, normal, 400, 30px, 1.13);
+  }
+}
+
+.about__title {
+  margin: auto;
+  margin-bottom: 26px;
+  @include font-design(Titan One, normal, 400, 34px, 1.15, 0.04em);
+
+  text-align: center;
+  text-transform: uppercase;
+  color: $cl-accent;
+
+  @media screen and (max-width: 767px) {
+    width: 200px;
+  }
+
+  @include tab {
+    margin-bottom: 50px;
+    @include font-design(Titan One, normal, 400, 48px, 1.14, 0.04em);
+  }
+
+  @include pc {
+    margin-bottom: 55px;
+    @include font-design(Titan One, normal, 400, 58px, 1.14, 0.06em);
+  }
+}
+
+.about__product {
+  @include tab {
+    display: flex;
+  }
+}
+
+.about__thumb {
+  width: 100%;
+  height: auto;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 46px;
+  }
+
+  @include tab {
+    margin-right: 17px;
+    flex-basis: calc((100% - 17px) / 2);
+  }
+
+  @include pc {
+    margin-right: 74px;
+    flex-basis: calc((100% + 20px) / 2);
+  }
+}
+
+.about__description {
+  @include tab {
+    padding-top: 50px;
+    flex-basis: calc((100% - 17px) / 2);
+  }
+
+  @include pc {
+    padding-top: 51px;
+    padding-bottom: 107px;
+    flex-basis: calc((100% - 94px) / 2);
+  }
+}
+
+.about__list {
+  margin-bottom: 17px;
+
+  @include tab {
+    margin-bottom: 62px;
+  }
+
+  @include pc {
+    margin-bottom: 45px;
+  }
+}
+
+.about__item:not(:last-child) {
+  margin-bottom: 30px;
+
+  @include pc {
+    margin-bottom: 35px;
+  }
+}
+.about__item:nth-child(2) {
+  @media screen and (max-width: 1279px) {
+    margin-bottom: 15px;
+  }
+}
+
+.about__text {
+  @include font-design(DM Sans, normal, 500, 12px, 1.62);
+
+  color: $cl-text;
+
+  @include tab {
+    @include font-design(DM Sans, normal, 500, 14px, 1.76, 0.04em);
+  }
+  @include pc {
+    @include font-design(DM Sans, normal, 500, 14px, 1.94, 0.04em);
+  }
+}
+
+.about__text--first {
+  color: $cl-h-text;
+
+  @include pc {
+    @include font-design(DM Sans, normal, 500, 16px, 1.76, 0.04em);
+  }
+}
+
+.about__btn {
+  padding: 0;
+  min-width: 176px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  border-radius: 22px;
+  border: transparent;
+  fill: currentColor;
+
+  background-color: $cl-white-primary;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &-link {
+    color: $cl-accent;
+    @include font-design(DM Sans, normal, 700, 14px, 1.29);
+
+    @include tab {
+      @include font-design(DM Sans, normal, 700, 16px, 1.31);
+      outline: none;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $cl-hover-bg2;
+    text-shadow: 0px 5px 5px rgba(212, 20, 67, 0.6);
+    outline: none;
+  }
+}
+
+.about__btn-icon {
+  margin-left: 13px;
+}

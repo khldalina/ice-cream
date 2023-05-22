@@ -1,0 +1,276 @@
+.backdrop-fr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 8;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+// ----------------------------
+.modal-fr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 600px;
+  background: $cl-white-primary;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: auto;
+  z-index: 9;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url(../images/mobile/hero-ice@1x.png);
+    background-size: cover;
+    height: 100%;
+    width: 230px;
+    background-repeat: no-repeat;
+    left: 10%;
+    top: 0;
+    opacity: 0.4;
+    z-index: -1;
+    overflow: hidden;
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/mobile/hero-ice@2x.png);
+    }
+  }
+  @include tel {
+    width: 450px;
+    height: 570px;
+  }
+
+  @include tab {
+    width: 500px;
+  }
+
+  @include pc {
+    max-height: 700px;
+  }
+}
+.buttonClose-fr {
+  position: absolute;
+  right: 3%;
+  top: 2%;
+  min-width: 30px;
+  min-height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: $cl-accent;
+  color: $cl-white-primary;
+  padding: 6px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: $cl-accent;
+    background-color: $cl-white-primary;
+  }
+}
+.modal-window-fr {
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modal-window__title-fr {
+  font-family: 'Titan One', cursive;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+  text-align: center;
+  padding-top: 30px;
+  color: $cl-accent;
+  @include pc {
+    line-height: 1.15;
+  }
+}
+.modal-window__labels-fr {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  color: $cl-accent;
+}
+.modal-window__input-fr {
+  width: 100%;
+  max-height: 40px;
+  display: inline-block;
+  font-size: 12px;
+  color: $cl-accent;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 11px 42px;
+  cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.8;
+
+  @include tab {
+    font-size: 14px;
+  }
+
+  @include pc {
+    font-size: 16px;
+  }
+  &:focus {
+    outline: none;
+    border-color: $cl-hover-bg1;
+  }
+}
+
+.modal-window__input-fr ~ .modal-window__input-icon-fr {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  left: 12px;
+  top: 50%;
+  fill: $cl-text;
+  transform: translateY(-50%);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-window__input-fr:focus ~ .modal-window__input-icon-fr {
+  fill: $cl-hover-bg1;
+}
+
+.modal-window__form-fr {
+  display: flex;
+  flex-direction: column;
+}
+.modal-window__input-field-fr {
+  position: relative;
+}
+.modal-window__fields-fr {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.comment-field-fr {
+  display: flex;
+  flex-direction: column;
+}
+.comment-field__label-fr {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  color: $cl-accent;
+}
+.comment-field__textarea-fr {
+  resize: none;
+  font-size: 12px;
+  color: $cl-accent;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  padding: 12px 16px;
+  max-height: 120px;
+  border-radius: 4px;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @include tab {
+    font-size: 14px;
+  }
+
+  @include pc {
+    font-size: 16px;
+  }
+  &:focus {
+    outline: none;
+    border-color: $cl-hover-bg1;
+  }
+}
+.comment-field-fr .comment-field__textarea-fr::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-size: 14px;
+  line-height: 1.14;
+  @include pc {
+    font-size: 12px;
+  }
+}
+.agree-options__text-fr {
+  content: '';
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.agree-options__text-fr::before {
+  content: '';
+  display: inline-flex;
+  border: 2px solid $cl-card1;
+  border-radius: 2px;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+}
+.agree-options__checkbox-fr:checked + .agree-options__text-fr::before {
+  content: '';
+  display: inline-flex;
+  background-color: $cl-hover-bg1;
+  background-image: url(../images/check.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  fill: $cl-white-primary;
+  border: none;
+}
+.agree-options-fr {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 11px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: $cl-h-text;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  @include pc {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
+.agree-options__link-fr {
+  display: inline-flex;
+  color: $cl-hover-bg1;
+  margin-left: 4px;
+  text-decoration: underline;
+}
+.submit-button-fr {
+  display: inline-flex;
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 1.88;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: $cl-white-primary;
+  border: none;
+  border-radius: 15px;
+  background-color: $cl-accent;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.15);
+  padding: 7px 55px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: $cl-accent;
+    background-color: $cl-white-primary;
+    border-bottom: 4px solid $cl-accent;
+    box-shadow: 2px 13px 32px -4px rgba(199, 19, 62, 0.2) inset;
+  }
+}

@@ -1,0 +1,266 @@
+.gallery {
+  padding-bottom: 80px;
+
+  @include tab {
+    padding-bottom: 121px;
+  }
+
+  @include pc {
+    padding-bottom: 123px;
+  }
+
+  background-image: linear-gradient(#fff5f6 30%, #fff 30%);
+}
+
+.gallery__container {
+  @include small {
+    width: 320px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @include tel {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @include tab {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  @include pc {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.masonry__item {
+  padding: 5px;
+}
+.masonry__item--1 {
+  width: 300px;
+  height: 150px;
+}
+.masonry__item--2 {
+  width: 150px;
+  height: 100px;
+}
+.masonry__item--3 {
+  width: 300px;
+  height: 300px;
+}
+.masonry__item--4 {
+  width: 300px;
+  height: 150px;
+}
+.masonry__item--5 {
+  width: 150px;
+  height: 100px;
+}
+.masonry__item--6 {
+  width: 150px;
+  height: 150px;
+}
+.masonry__item--7 {
+  width: 150px;
+  height: 150px;
+}
+.masonry__item--8 {
+  width: 150px;
+  height: 150px;
+}
+.masonry__item--9 {
+  width: 150px;
+  height: 150px;
+}
+.masonry__item--10 {
+  width: 150px;
+  height: 100px;
+}
+.masonry__item--11 {
+  width: 150px;
+  height: 150px;
+}
+
+.masonry__item div {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.masonry__item-img-1 {
+  background-image: url(../images/gallery/gallery-1.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.masonry__item-img-2 {
+  background-image: url(../images/gallery/gallery-2.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.masonry__item-img-3 {
+  background-image: url(../images/gallery/gallery-3.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.masonry__item-img-4 {
+  background-image: url(../images/gallery/gallery-4.jfif);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.masonry__item-img-5 {
+  background-image: url(../images/gallery/gallery-5.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.masonry__item-img-6 {
+  background-image: url(../images/gallery/gallery-6.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.masonry__item-img-7 {
+  background-image: url(../images/gallery/gallery-7.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.masonry__item-img-8 {
+  background-image: url(../images/gallery/gallery-8.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.masonry__item-img-9 {
+  background-image: url(../images/gallery/gallery-9.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.masonry__item-img-10 {
+  background-image: url(../images/gallery/gallery-10.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.masonry__item-img-11 {
+  background-image: url(../images/gallery/gallery-11.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// ---------------------------------------SLIDER------------------------------------
+
+.gallery__backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+
+  transition: opacity 400ms linear;
+}
+.slider-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.slick-slider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 90vw;
+  @include tab {
+    width: 80vw;
+  }
+  @include pc {
+    width: 70vw;
+  }
+}
+
+.slick-prev {
+  @include tel {
+    transform: translateX(5px);
+  }
+  @include tab {
+    width: 40px;
+    height: 40px;
+    transform: translate(-20px, -20px);
+    &::before {
+      font-size: 40px;
+    }
+  }
+  @include pc {
+    width: 60px;
+    height: 60px;
+    transform: translate(-50px, -30px);
+    &::before {
+      font-size: 60px;
+    }
+  }
+}
+.slick-next {
+  @include tel {
+    transform: translateX(-5px);
+  }
+  @include tab {
+    width: 40px;
+    height: 40px;
+    transform: translate(20px, -20px);
+    &::before {
+      font-size: 40px;
+    }
+  }
+  @include pc {
+    width: 60px;
+    height: 60px;
+    transform: translate(50px, -30px);
+    &::before {
+      font-size: 60px;
+    }
+  }
+}
+.slick-slide {
+  margin: 0 5px;
+}
+
+.sliderClose {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  z-index: 10;
+  right: 2%;
+  top: 2%;
+
+  cursor: pointer;
+  color: azure;
+  fill: currentColor;
+
+  transition: color 250ms linear;
+
+  &:hover {
+    fill: #fff;
+  }
+}
+
+.sliderClose__icon {
+  @include tab {
+    width: 30px;
+    height: 30px;
+  }
+  @include pc {
+    width: 40px;
+    height: 40px;
+  }
+}

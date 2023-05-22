@@ -1,0 +1,41 @@
+@mixin small {
+  @media screen and (min-width: 320px) and (max-width: 479px) {
+    @content;
+  }
+}
+@mixin tel {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin pc {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+// міксін для форматування шрифтів
+//   ПРИКЛАД  (назва шрифта, стиль, вага, розмір(обов'язково з пікселями), міжрядковий інтервал, спейсінг(обов'язково з em))
+//   @include font-design(DM Sans, normal, 500, 16px, 1.62, 0.04em);
+//
+
+@mixin font-design(
+  $family: DM Sans,
+  $style: normal,
+  $weight: 400,
+  $size: 14px,
+  $height: 1.76,
+  $spacing: 0.04em
+) {
+  font-family: $family;
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  letter-spacing: $spacing;
+}

@@ -1,0 +1,129 @@
+.backdrop {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: scroll;
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+// ----------------------------
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 90vw;
+  height: 90vh;
+  background: $cl-white-primary;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  overflow: auto;
+
+  @include tel {
+    max-width: 450px;
+  }
+
+  @include tab {
+    width: 500px;
+  }
+
+  @include pc {
+    width: 600px;
+    max-height: 700px;
+  }
+}
+.buttonClose {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  min-width: 30px;
+  min-height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: $cl-menu-bg;
+  color: $cl-white-primary;
+  padding: 6px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+
+  transition-property: background-color color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: $cl-menu-bg;
+    background-color: $cl-white-primary;
+
+    transition-property: background-color color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.buttonClose__icon {
+  stroke: currentColor;
+}
+// -----------------------------
+.modalContainer {
+  padding: 50px 40px;
+}
+.modal__preTitle {
+  padding-bottom: 33px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.62;
+
+  color: $cl-h-text;
+
+  @include tab {
+    padding-bottom: 32px;
+    font-size: 14px;
+    line-height: 1.76;
+    letter-spacing: 0.04em;
+  }
+  @include pc {
+    padding-bottom: 35px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.76;
+    letter-spacing: 0.04em;
+  }
+}
+.modal__title {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.62;
+  color: $cl-text;
+  @include tab {
+    font-size: 14px;
+    line-height: 1.76;
+    letter-spacing: 0.04em;
+  }
+  @include pc {
+    font-size: 14px;
+    line-height: 1.94;
+    letter-spacing: 0.04em;
+  }
+}
+
+.modal__img {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+  padding-bottom: 30px;
+  width: 180px;
+  height: 190px;
+}

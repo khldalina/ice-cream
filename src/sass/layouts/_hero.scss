@@ -1,0 +1,422 @@
+.hero__section {
+  background-color: $cl-section-hero;
+  overflow: hidden;
+
+  padding-top: 193px;
+  padding-bottom: 160px;
+
+  @include tab {
+    padding-top: 102px;
+    padding-bottom: 34px;
+  }
+
+  @include pc {
+    padding-top: 171px;
+    padding-bottom: 56px;
+  }
+}
+
+.hero__container {
+  position: relative;
+  z-index: 0;
+
+  @include tab {
+    display: flex;
+    justify-content: space-between;
+
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  @include pc {
+    padding-left: 115px;
+    padding-right: 115px;
+  }
+}
+
+// ------------------------------------ HERO LEFT PART ----------------------------------
+
+.hero__left-part {
+  @include tab {
+    display: flex;
+    flex-direction: column;
+
+    width: 234px;
+  }
+
+  @include pc {
+    width: 380px;
+  }
+}
+
+.page-title {
+  width: 218px;
+
+  font-family: 'Titan One', cursive;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $cl-white-primary;
+
+  margin-bottom: 19px;
+
+  @include tab {
+    width: 162px;
+    padding-top: 6px;
+
+    font-size: 22px;
+    line-height: 1.14;
+
+    margin-bottom: 20px;
+  }
+
+  @include pc {
+    width: 277px;
+
+    font-size: 38px;
+    line-height: 1.16;
+
+    margin-bottom: 25px;
+  }
+}
+.page-title-accent {
+  font-size: 48px;
+  line-height: 0.96;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $cl-accent;
+
+  @include tab {
+    font-size: 34px;
+    line-height: 0.91;
+  }
+
+  @include pc {
+    font-size: 58px;
+    line-height: 0.9;
+  }
+}
+
+.hero__nav-list {
+  display: flex;
+
+  @include tab {
+    margin-bottom: 66px;
+  }
+
+  @include pc {
+    margin-bottom: 112px;
+  }
+}
+.hero__nav-item:not(:first-child) {
+  margin-left: 8px;
+
+  @include pc {
+    margin-left: 15px;
+  }
+}
+.hero__first-nav-link,
+.hero__second-nav-link {
+  // reset
+  text-decoration: none;
+  // reset
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 24px;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  line-height: 1.25;
+  color: $cl-white-primary;
+
+  @include pc {
+    width: 104px;
+    height: 40px;
+
+    font-size: 14px;
+    line-height: 1.28;
+  }
+
+  border-radius: 20px;
+  background-color: $cl-accent;
+  outline: 1px solid transparent;
+
+  transition: background-color 250ms linear, outline 250ms linear;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $cl-hover-bg1;
+    outline-color: $cl-white-primary;
+    -webkit-tap-highlight-color: transparent;
+    text-shadow: 0px 5px 5px rgba(212, 20, 67, 0.6);
+  }
+}
+.hero__second-nav-link {
+  width: 83px;
+
+  @include pc {
+    width: 138px;
+  }
+
+  color: $cl-accent;
+
+  background-color: $cl-white-primary;
+  outline: 1px solid $cl-accent;
+
+  transition: background-color 250ms linear, outline 250ms linear;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $cl-hover-bg2;
+    outline-color: $cl-hover-bg1;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.hero__add-info {
+  display: none;
+
+  @include tab {
+    display: block;
+    width: 114px;
+    align-self: flex-end;
+  }
+
+  @include pc {
+    width: 200px;
+  }
+}
+.hero__text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  line-height: 1.5;
+  color: $cl-white-primary;
+
+  margin-bottom: 7px;
+
+  @include pc {
+    font-size: 14px;
+    line-height: 1.4;
+
+    margin-bottom: 20px;
+  }
+}
+.hero__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // reset
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  // reset
+
+  border-radius: 50%;
+  outline: 1px solid transparent;
+
+  transition: outline 250ms linear;
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    outline-color: $cl-hover-bg1;
+  }
+}
+.hero__btn-icon {
+  width: 18px;
+  height: 18px;
+
+  @include pc {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+// ------------------------------------ HERO RIGHT PART -----------------------------------
+
+.hero__right-part {
+  display: none;
+
+  @include tab {
+    display: block;
+  }
+}
+.hero__stat-item {
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
+
+  @include pc {
+    margin-bottom: 18px;
+  }
+}
+.hero__stat-number {
+  position: relative;
+
+  font-family: 'Titan One', cursive;
+  font-size: 28px;
+  line-height: 1.14;
+  letter-spacing: 0.04em;
+  text-align: right;
+  text-transform: uppercase;
+  color: $cl-accent;
+
+  @include pc {
+    font-size: 46px;
+    line-height: 1.15;
+  }
+
+  &::after {
+    position: absolute;
+    top: -2px;
+    right: -6px;
+    z-index: -1;
+
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $cl-white-primary;
+
+    @include pc {
+      top: -5px;
+      right: -16px;
+
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+.hero__stat-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  line-height: 1.25;
+  text-align: right;
+  color: $cl-white-primary;
+
+  @include pc {
+    font-size: 14px;
+    line-height: 1.28;
+  }
+}
+
+// ---------------------------------------- HERO IMAGES ---------------------------------------
+
+.hero__img-1 {
+  position: absolute;
+  bottom: -160px;
+  left: calc(11.25vw * 2 - 36px + 81px);
+  z-index: -1;
+
+  width: 171px;
+  height: 410px;
+
+  @include tel {
+    left: 153px;
+  }
+
+  @include tab {
+    left: 378px;
+    bottom: -34px;
+
+    width: 143px;
+    height: 336px;
+  }
+
+  @include pc {
+    left: 594px;
+    bottom: -56px;
+
+    width: 236px;
+    height: 557px;
+  }
+}
+.circle {
+  position: absolute;
+  bottom: -85px;
+  left: calc(11.25vw * 2 - 36px);
+  z-index: -2;
+
+  width: 346px;
+  height: 344px;
+  border-radius: 50%;
+  background-color: $cl-primary;
+
+  @include tel {
+    left: 72px;
+  }
+
+  @include tab {
+    left: 307px;
+    bottom: 12px;
+
+    width: 324px;
+    height: 322px;
+  }
+
+  @include pc {
+    left: 475px;
+    bottom: 19px;
+
+    width: 538px;
+    height: 538px;
+  }
+}
+
+.hero__img-2 {
+  display: none;
+
+  @include tab {
+    display: block;
+
+    position: absolute;
+    bottom: -6px;
+    left: 34px;
+    z-index: -1;
+
+    width: 124px;
+    height: 126px;
+  }
+
+  @include pc {
+    bottom: -11px;
+    left: 77px;
+
+    width: 188px;
+    height: 191px;
+  }
+}
+.hero__img-3 {
+  display: none;
+
+  @include tab {
+    display: block;
+
+    position: absolute;
+    bottom: -34px;
+    right: 34px;
+    z-index: -1;
+
+    width: 168px;
+    height: 133px;
+  }
+
+  @include pc {
+    bottom: -56px;
+    right: 109px;
+
+    width: 293px;
+    height: 232px;
+  }
+}

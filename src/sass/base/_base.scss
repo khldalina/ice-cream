@@ -1,0 +1,10 @@
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'DM Sans', sans-serif, 'Titan One', cursive;
+  text-decoration: none;
+
+  &.slider-open {
+    overflow: hidden;
+  }
+}

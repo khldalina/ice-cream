@@ -1,0 +1,321 @@
+//  кнопка скрол вгору
+.scrollTop {
+  position: fixed;
+  bottom: 800px;
+  width: 45px;
+  height: 45px;
+  background: url(./../images/top.png);
+  border-radius: 25%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: 250ms;
+
+  &.active {
+    visibility: visible;
+    opacity: 0.5;
+
+    @media screen and (max-width: 1279px) {
+      background-size: 30px;
+      width: 30px;
+      height: 30px;
+      bottom: 30px;
+      right: 30px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      background-size: 45px;
+      width: 45px;
+      height: 45px;
+      bottom: 50px;
+      right: 45px;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+      box-shadow: 0px 5px 10px 5px rgba(212, 20, 67, 0.5);
+    }
+  }
+}
+
+//===== шапка cайту =====
+.header__section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.header {
+  @include font-design(DM Sans, normal, 700, 16px, 1.28, 0.04em);
+  background-color: $cl-section-hero;
+  color: #fff;
+}
+// ==== логотип ====
+.header__logo {
+  position: absolute;
+  width: 199px;
+  height: 50px;
+
+  @media screen and (max-width: 767px) {
+    top: 6px;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+  @media screen and (min-width: 768px) {
+    top: 37px;
+    left: 35px;
+    transform: translateY(-50%);
+  }
+  @media screen and (min-width: 768px) {
+    top: 37px;
+    left: 45px;
+    transform: translateY(-50%);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+// === панель навігації ===
+.nav {
+  &__bar {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__item {
+    margin-right: 35px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $cl-white-primary;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: $cl-accent;
+      text-shadow: 0px 5px 5px rgba(212, 20, 67, 0.6);
+      outline: none;
+    }
+  }
+}
+.site-menu {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  color: $cl-white-primary;
+
+  @media screen and (min-width: 320px) and (max-width: 1279px) {
+    display: none;
+  }
+}
+
+//  == мобільне меню ==
+.mob {
+  &-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 0 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    z-index: 9;
+    background-color: $cl-menu-bg;
+    box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.25);
+    transform: translate(0);
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.is-hidden {
+      transform: translate(100%);
+    }
+
+    @include tab {
+      justify-content: space-between;
+      width: 254px;
+      height: 100vh;
+    }
+  }
+
+  &-menu__open {
+    display: block;
+    position: absolute;
+    margin-left: auto;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 3;
+
+    @media screen and (max-width: 767px) {
+      top: 32px;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+    @include tab {
+      top: 52px;
+      right: 224px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      display: none;
+    }
+  }
+
+  &-menu__close {
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+    position: absolute;
+    top: 17px;
+    right: 21px;
+    background: transparent;
+    border: none;
+  }
+}
+.icon-cross {
+  fill: #fff;
+}
+.mob-nav {
+  position: relative;
+  &__item {
+    @include font-design(DM Sans, normal, 700, 14px, 1.28, 0.04em);
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    height: 42px;
+    border-bottom: 0.5px solid #e18298;
+
+    &:first-child {
+      border-top: 1px solid #e18298;
+    }
+    &:hover,
+    &:focus {
+      color: $cl-accent;
+      box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 25%);
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-left: 21px;
+    width: 100%;
+    position: relative;
+    color: $cl-white-primary;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include tab {
+      display: flex;
+      align-items: center;
+      margin-left: 24px;
+    }
+  }
+}
+
+//  === кнопки ===
+.btn__buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: $cl-white-primary;
+  border-style: none;
+  border-radius: 22px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @include tab {
+    position: absolute;
+    top: 39px;
+    right: 26px;
+    width: 160px;
+    height: 44px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    top: 39px;
+    right: 115px;
+    width: 159px;
+    height: 44px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $cl-hover-bg2;
+    text-shadow: 0px 5px 5px rgba(212, 20, 67, 0.6);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+  }
+
+  &-link {
+    @include font-design(DM Sans, normal, 700, 16px, 1.31, 0.04em);
+    color: $cl-accent;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.btn__buy-icon {
+  margin-left: 12px;
+  margin-right: 1px;
+}
+
+.btn__buy-mob {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 19px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $cl-white-primary;
+  border-style: none;
+  border-radius: 22px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    width: 205px;
+    height: 44px;
+  }
+
+  @include tab {
+    width: 186px;
+    height: 44px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $cl-hover-bg2;
+    text-shadow: 0px 5px 5px rgba(212, 20, 67, 0.6);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: rgba(212, 20, 67, 0.6);
+  }
+}
